@@ -12,7 +12,6 @@ gem 'rails', '~> 5.1.6'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
-gem 'kaminari'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -29,9 +28,10 @@ gem 'kaminari'
 gem 'omniauth'
 gem 'devise'
 gem 'devise_token_auth'
+gem 'kaminari'
 group :development, :test do
-  gem 'pry'
   gem 'faker'
+  gem 'pry'
 end
 
 group :development do

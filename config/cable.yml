@@ -7,4 +7,4 @@ test:
 production:
   adapter: redis
   url: redis://localhost:6379/1
-  channel_prefix: dpl-real-estate_production
+  channel_prefix: the-real-estate_production

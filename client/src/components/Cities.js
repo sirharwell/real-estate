@@ -14,30 +14,31 @@ const cities = [
   'Murray',
 ]
 
-const options = cities.map( c => {
+const options = cities.map( c => { 
   return { key: c, text: c, value: c }
 })
 
 class Cities extends React.Component {
-  state = { city: null, properties: [], page: 1, total_pages: 0 }
+  state = {
+    city: null,
+    properties: [],
+    page: 1,
+    total_pages: 0
+  }
 
-  handleChange = (e, {value}) => {
+  handleChange = (e, { value }) => {
     this.setState({ city: value, properties: [] }, () => {
-       this.getProperties();
+      this.getProperties();
     });
   }
 
   getProperties = () => {
-    const { city, properties, page } = this.state;
-    axios.get(`/api/cities/${city}?page=${page}`)
+    const { city } = this.state;
+    axios.get(`/api/cities/${city}`)
       .then( res => {
         const { properties, total_pages } = res.data;
-        this.setState({
-          properties: [...this.state.properties, ...properties],
-          total_pages,
-          page: page + 1
-        })
-      });
+        this.setState({ properties, total_pages })
+      })
   }
 
   render() {
@@ -72,3 +73,10 @@ class Cities extends React.Component {
 }
 
 export default Cities;
+
+
+
+
+
+
+
