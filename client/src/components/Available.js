@@ -1,4 +1,4 @@
-mport React from 'react';
+import React from 'react';
 import axios from 'axios';
 import { List, Header, Table } from 'semantic-ui-react';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -95,7 +95,8 @@ class Available extends React.Component {
             )
           })
         }
-      </InfinteScroll>
+      </InfiniteScroll>
+      </List>
     )
   }
 
